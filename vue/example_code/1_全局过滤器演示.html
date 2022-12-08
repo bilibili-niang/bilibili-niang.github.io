@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <mate name="viewport" content="width=device-width" , initial-scale="1.0"/>
+    <title>全局过滤器演示</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <h2>不使用过滤器:{{time1}}</h2>-->
+    <h2>第一种方法:{{time1 | dateFormat}}</h2>
+    <p>第二种方法
+        <input type="text" v-bind:value="time1 | dateFormat">
+    </p>
+</div>
+<script>
+    <!--    全局过滤器进行时间格式化-->
+    Vue.filter('dateFormat', function (dateStr) {
+        //根据给定的时间字符串,得到特定的时间
+        var dt = new Date(dateStr)
+        var y = dt.getFullYear();
+        var m = dt.getMonth();
+        var d = dt.getDate();
+        return `${y}-${m}-${d}`;
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            time1: new Date(),
+        }, methods: {}
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+#### 创建进入时的动画:
+
+> 这一步很简单
+
+> index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test3</title>
+    <link rel="stylesheet" type="text/less" href="./css/index.less">
+    <link rel="stylesheet" type="text/less" href="./css/animate.less">
+</head>
+
+<body>
+    <div class="test">
+        <!-- <div class="cover coverFlag"></div> -->
+        <div class="button">
+            <div class="icon1"></div>
+            <div class="icon2"></div>
+        </div>
+    </div>
+</body>
+
+<!-- jQuery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<!-- less.js cdn -->
+<script src="https://cdn.bootcdn.net/ajax/libs/less.js/4.1.1/less.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
+```
+
+> index.less文件
+
+```less
+.testBackgroundColor {
+  background: rebeccapurple;
+}
+
+.test {
+  display: flex;
+  width: 100rem;
+  height: 50rem;
+  background: rebeccapurple;
+
+  .button {
+    position: relative;
+    display: flex;
+    background: gray;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 25rem;
+    z-index: 3;
+
+    .icon1,
+    .icon2 {
+      display: flex;
+      position: absolute;
+      border-radius: 2rem;
+      background: aliceblue;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .icon1 {
+      width: 15rem;
+      height: 5rem;
+    }
+
+    .icon2 {
+      width: 5rem;
+      height: 15rem;
+    }
+  }
+}
+
+.cover {
+  display: flex;
+  position: absolute;
+  width: 100rem;
+  height: 50rem;
+  background: rebeccapurple;
+  z-index: 2;
+}
+
+.toggleColor {
+  animation-name: backgroundChange;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+
+//下面是两个button按钮切换角度的类名
+.buttonRotate {
+  transform: rotate(45deg);
+  transition: transform .6s ease-in-out;
+}
+```
+
+> animate.less:(index.less中调用的动画):
+
+```less
+//改变背景颜色
+@keyframes backgroundChange {
+  from {
+    background: #663399;
+  }
+  to {
+    background: black;
+  }
+}
+```
+
+效果如下:
+
+<video src="./images/demo.mp4"></video>
+
+
+
+#### 为其添加离开动画
+
+>  (第二次点击恢复原状时动画不会那么突兀)
+
+- 为按钮添加离开动画:
+
+思路: 需要在执行了`buttonRotate`这个css类之后,将`.button`的角度变为0,切需要有动画执行的时间
+
+这个只需要在`.button`中添加一个类`buttonRotateReverse`,它的代码是:
+
+```html
+<-- 为button在html中添加类名 -->
+<div class="button buttonRotateReverse">
+	<div class="icon1"></div>
+	<div class="icon2"></div>
+</div>
+```
+
+
+
+```less
+//index.less中添加的代码:
+.buttonRotateReverse {
+  transform: rotate(0deg);
+  transition: transform .6s ease-in-out;
+}
+```
+
+```javascript
+// js中需要修改的部分(点击切换类名):
+$('.button').toggleClass('buttonRotate').toggleClass('buttonRotateReverse')
+```
+
+
+
+在点击button之后,切换css类名即可,效果:
+
+<video src="./img/demo2.mp4"></video>
+
+
+
+此时button有了离开动画,接下来需要为button后面的背景添加离开动画
+
+如果按照上面的为button添加离开动画的方法为背景添加动画是错的,效果会出错:
+
+> 硬刷新时,背景会出现背景离开的动画(颜色由黑变紫)
+
+<video src="./img/demo3.mp4"></video>
+
+
+
+而出现这种情况时,可以考虑在背景上添加一个z-index为2的蒙版,button的z-index为3,在点击button时,将蒙版移除
+
+代码:
+
+html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>test3</title>
+    <link rel="stylesheet" type="text/less" href="./css/index.less">
+    <link rel="stylesheet" type="text/less" href="./css/animate.less">
+</head>
+
+<body>
+    <div class="test toggleColorReverse">
+        <div class="cover coverFlag"></div>
+        <div class="button buttonRotateReverse">
+            <div class="icon1"></div>
+            <div class="icon2"></div>
+        </div>
+    </div>
+</body>
+<!-- jQuery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<!-- less.js cdn -->
+<script src="https://cdn.bootcdn.net/ajax/libs/less.js/4.1.1/less.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
+```
+
+js:
+
+```javascript
+$('.button').on('click', function () {
+    $('.coverFlag').removeClass('cover')
+    $('.test').toggleClass('toggleColor').toggleClass('toggleColorReverse')
+    $('.button').toggleClass('buttonRotate').toggleClass('buttonRotateReverse')
+})
+```
+
+index.less:
+
+```less
+.testBackgroundColor {
+  background: rebeccapurple;
+}
+
+.test {
+  display: flex;
+  width: 100rem;
+  height: 50rem;
+  background: rebeccapurple;
+
+  .button {
+    position: relative;
+    display: flex;
+    background: gray;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 25rem;
+    z-index: 3;
+
+    .icon1,
+    .icon2 {
+      display: flex;
+      position: absolute;
+      border-radius: 2rem;
+      background: aliceblue;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .icon1 {
+      width: 15rem;
+      height: 5rem;
+    }
+
+    .icon2 {
+      width: 5rem;
+      height: 15rem;
+    }
+  }
+}
+
+.cover {
+  display: flex;
+  position: absolute;
+  width: 100rem;
+  height: 50rem;
+  background: rebeccapurple;
+  z-index: 2;
+}
+
+.toggleColor {
+  animation-name: backgroundChange;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.toggleColorReverse {
+  animation-name: backgroundChangeReverse;
+  animation-duration: 0.6s;
+  //animation-fill-mode: forwards;
+  //transform: ;
+}
+
+
+//下面是两个button按钮切换角度的类名
+.buttonRotate {
+  transform: rotate(45deg);
+  transition: transform .6s ease-in-out;
+}
+
+.buttonRotateReverse {
+  transform: rotate(0deg);
+  transition: transform .6s ease-in-out;
+}
+```
+
+animate.less:
+
+```less
+//改变背景颜色
+@keyframes backgroundChange {
+  from {
+    background: #663399;
+  }
+
+  to {
+    background: black;
+  }
+}
+
+@keyframes backgroundChangeReverse {
+  from {
+    background: black;
+  }
+
+  to {
+    background: #663399;
+  }
+}
+```
+
+
+
+此时 ,硬刷新也不会出现结束动画,效果符合预期
+
+<video src="./images/demo4.mp4"></video>

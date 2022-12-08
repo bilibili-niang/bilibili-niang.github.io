@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <mate name="viewport" content="width=device-width" , initial-scale="1.0"/>
+    <title>私有过滤器</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h2>{{time1 | dateFormat}}</h2>
+</div>
+
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            time1: new Date(),
+        },
+        methods: {},
+        //在`filters`中定义过滤器
+        filters: {
+            dataFormat(dateStr) {
+                //根据给定的时间字符串,得到特定的时间
+                var dt = new Date(dateStr)
+                var y = dt.getFullYear();
+                var m = dt.getMonth();
+                var d = dt.getDate();
+                return `${y}-${m}-${d}`;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

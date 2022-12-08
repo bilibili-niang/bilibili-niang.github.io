@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="220d1fe5-4111-407e-b723-b4db90217d54" name="work">
+        <fileTransfer rootFolder="/vueBehind" accessType="SFTP" host="icestone.work" port="22" sshConfigId="ecbd84ee-d11b-45b0-a3a5-b655d83f23c1" sshConfig="root@icestone.work:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
