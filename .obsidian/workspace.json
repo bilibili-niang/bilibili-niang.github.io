@@ -1,39 +1,52 @@
 {
   "main": {
-    "id": "0e51e0c100742ecd",
+    "id": "feee0447016db2ac",
     "type": "split",
     "children": [
       {
-        "id": "47ebbd0a678198d7",
+        "id": "2e7dbf71e5d53f78",
         "type": "tabs",
         "children": [
           {
-            "id": "fd8caf9743c940ab",
+            "id": "0736bf1993131642",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "others/demo01.md",
+                "file": "others/2022年实训ppt.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "22bf78b2064c3266",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "2f88594036939e48",
+    "id": "d6a61b983135b8be",
     "type": "split",
     "children": [
       {
-        "id": "85c5a326bc7de038",
+        "id": "ec87e0bba74f1906",
         "type": "tabs",
         "children": [
           {
-            "id": "e931b3be5c707ea7",
+            "id": "908087333df87f33",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +56,7 @@
             }
           },
           {
-            "id": "d79ec93063205467",
+            "id": "8e0f34102520f6d7",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +71,7 @@
             }
           },
           {
-            "id": "0ef3cd78f0263fee",
+            "id": "f004db3725bc012e",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -69,23 +82,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 228.51190185546875,
+    "collapsed": true
   },
   "right": {
-    "id": "0b2e209811a39a77",
+    "id": "2e4a1cef935df7f3",
     "type": "split",
     "children": [
       {
-        "id": "c2d8926314bc18ea",
+        "id": "5a52c793569dc5e1",
         "type": "tabs",
         "children": [
           {
-            "id": "4a7c872927c663de",
+            "id": "4f238215f3abb7fe",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "others/demo01.md",
+                "file": "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,45 +111,56 @@
             }
           },
           {
-            "id": "a53775cb9cb41afc",
+            "id": "71f866ec3d94d464",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "others/demo01.md",
+                "file": "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "56519a22754974e8",
+            "id": "64488cd31c6cbf5e",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
           {
-            "id": "38992e01f8109a1d",
+            "id": "af014e44abf322e4",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "others/demo01.md"
+                "file": "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "fd8caf9743c940ab",
-  "lastOpenFiles": []
+  "active": "22bf78b2064c3266",
+  "lastOpenFiles": [
+    "others/2022年实训ppt.md",
+    "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md",
+    "springMVC/04_springMVC.md",
+    "markdown_note.md",
+    "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.pdf",
+    "others/css一些少用属性的记载.md",
+    "others/样式少用属性的记载.md",
+    "老师的笔记/2022年实训_ssm相关的表头_简单的入门笔记/SpringMVC.md",
+    "老师的笔记/2022年实训_ssm相关的表头_简单的入门笔记/Spring.md",
+    "others/实训.md"
+  ]
 }

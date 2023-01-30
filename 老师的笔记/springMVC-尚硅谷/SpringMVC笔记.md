@@ -566,11 +566,11 @@ public String testPOJO(User user){
 ```
 
 > 注：
->
+> 
 > SpringMVC中处理编码的过滤器一定要配置到其他过滤器之前，否则无效
 
 # 五、域对象共享数据
-
+	
 ### 1、使用ServletAPI向request域对象共享数据
 
 ```java
