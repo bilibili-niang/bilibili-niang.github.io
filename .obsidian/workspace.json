@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9b34731a0a52b7b6",
+        "id": "17b3a205d9303956",
         "type": "tabs",
         "children": [
           {
-            "id": "bbf887d3f032f870",
+            "id": "3c43eccddea4bb71",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "typescript/01.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -65,12 +61,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 228.51190185546875,
-    "collapsed": true
+    "width": 228.51190185546875
   },
   "right": {
     "id": "2e4a1cef935df7f3",
@@ -86,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "typescript/01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "typescript/01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,17 +119,15 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "typescript/01.md"
-              }
+              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,8 +139,18 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "af014e44abf322e4",
+  "active": "f004db3725bc012e",
   "lastOpenFiles": [
+    "未命名.canvas",
+    "未命名 3.canvas",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
+    "electron/electron_1.md",
+    "electron/images/13.png",
+    "electron/images/12.png",
+    "electron/images/11.png",
+    "typescript/01.md",
+    "走的坑/样式少用属性的记载.md",
     "others/2022年实训ppt.md",
     "老师的笔记/springMVC-尚硅谷/SpringMVC笔记.md",
     "springMVC/04_springMVC.md",
